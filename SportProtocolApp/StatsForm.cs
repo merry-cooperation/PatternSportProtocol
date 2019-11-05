@@ -52,9 +52,10 @@ namespace SportProtocolApp
         private void getStatsButton_Click(object sender, EventArgs e)
         {
             var stat = (string)statsComboBox.SelectedItem;
-            if (stat.Length == 0)
+            if (stat is null || stat.Length == 0)
             {
                 MessageBox.Show("select stat to show");
+                return;
             }
             var player = (Player)playersListBox1.SelectedItem;
 
